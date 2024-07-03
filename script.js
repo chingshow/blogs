@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const documentItem = document.createElement('div');
             documentItem.className = 'documents-item';
             documentItem.innerHTML = `
-                <a href="./documents/${item.no}.html" target="_blank">${item.titles}</a> <p class="author">- ${item.author}</p>
+                <a href="./public/documents/${item.no}.html" target="_blank">${item.titles}</a> <p class="author">- ${item.author}</p>
             `;
             documentsContent.appendChild(documentItem);
         });
@@ -65,10 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.contact h3').textContent = content.footer.contact.title;
         document.querySelector('.contact p:nth-child(2)').textContent = `Phone: ${content.footer.contact.phone}`;
         document.querySelector('.contact p:nth-child(3)').textContent = `Address: ${content.footer.contact.address}`;
-
-        // Set event date for countdown
-        const eventDate = new Date(content.registration.eventDate).getTime();
-        updateCountdown(eventDate);
     }
 
     // Mobile menu toggle
