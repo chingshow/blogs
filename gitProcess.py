@@ -15,6 +15,8 @@ def setup_git_config(repo):
         git_config.set_value('user', 'name', git_username)
         git_config.set_value('user', 'email', git_email)
 
+    print(f"Git config set to: User = {git_username}, Email = {git_email}")
+
 
 def auto_git_process(repo_path, commit_message):
     try:
@@ -26,10 +28,15 @@ def auto_git_process(repo_path, commit_message):
             return False
 
         repo.git.add(A=True)
-        repo.index.commit(commit_message)
+        commit = repo.index.commit(commit_message)
+        print(f"Commit created: {commit.hexsha}")
+        print(f"Author: {commit.author.name} <{commit.author.email}>")
 
         origin = repo.remote('origin')
-        origin.push()
+        push_info = origin.push()
+
+        for info in push_info:
+            print(f"Push info: {info.summary}")
 
         print(f"Successfully added, committed, and pushed changes")
         return True
