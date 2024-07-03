@@ -1,5 +1,10 @@
 from gitProcess import auto_git_process
+import getRagicContents
+import checkTxt
 
+
+getRagicContents.main()
+checkTxt.main()
 
 repo_path = "."
 commit_message = "Auto commit"

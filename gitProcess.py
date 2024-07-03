@@ -10,7 +10,7 @@ def setup_git_config(repo):
 
     if not git_username or not git_email:
         raise ValueError("GIT_USERNAME or GIT_EMAIL not set in .env file")
-   
+
     with repo.config_writer() as git_config:
         git_config.set_value('user', 'name', git_username)
         git_config.set_value('user', 'email', git_email)
