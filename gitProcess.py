@@ -4,9 +4,12 @@ from git import Repo
 
 
 def setup_git_config(repo):
-    """設置 Git 配置"""
+    load_dotenv()
     git_username = os.getenv('GIT_USERNAME')
     git_email = os.getenv('GIT_EMAIL')
+
+    if not git_username or not git_email:
+        raise ValueError("GIT_USERNAME or GIT_EMAIL not set in .env file")
 
     with repo.config_writer() as git_config:
         git_config.set_value('user', 'name', git_username)
@@ -14,36 +17,21 @@ def setup_git_config(repo):
 
 
 def auto_git_process(repo_path, commit_message):
-    """執行自動 Git 流程：add、commit 和 push"""
     try:
-        # 載入環境變量
-        load_dotenv()
-        github_token = os.getenv('GITHUB_TOKEN')
-
         repo = Repo(repo_path)
-
-        # 設置 Git 配置
         setup_git_config(repo)
 
-        # 檢查是否有變更
         if not repo.is_dirty(untracked_files=True):
             print("No changes to commit")
             return False
 
-        # 添加所有變更
         repo.git.add(A=True)
-
-        # Commit
         repo.index.commit(commit_message)
 
-        # 獲取當前分支名稱
-        current_branch = repo.active_branch.name
-
-        # Push
         origin = repo.remote('origin')
-        origin.push(current_branch)
+        origin.push()
 
-        print(f"Successfully added, committed, and pushed changes to {current_branch}")
+        print(f"Successfully added, committed, and pushed changes")
         return True
 
     except Exception as e:
@@ -52,7 +40,6 @@ def auto_git_process(repo_path, commit_message):
 
 
 if __name__ == "__main__":
-    repo_path = "."
-    commit_message = "Auto commit"
+    repo_path = "."  # 當前目錄
+    commit_message = "Auto commit: Update files"
     auto_git_process(repo_path, commit_message)
-
