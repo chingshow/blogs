@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from git import Repo
+import datetime
 
 
 def setup_git_config(repo):
@@ -48,5 +49,6 @@ def auto_git_process(repo_path, commit_message):
 
 if __name__ == "__main__":
     repo_path = "."  # 當前目錄
-    commit_message = "Auto commit: Update files"
+    now = datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=8)))
+    commit_message = f"Article Updated {now.strftime('%Y/%m/%d %H:%M:%S')}"
     auto_git_process(repo_path, commit_message)
