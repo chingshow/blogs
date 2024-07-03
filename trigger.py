@@ -8,7 +8,6 @@ app = Flask(__name__)
 @app.route('/webhook', methods=['GET', 'POST'])
 def webhook():
     if request.method == 'POST':
-        # 处理webhook数据
         print("Received webhook")
         subprocess.run(["python", "main.py"])
         return "OK", 200
