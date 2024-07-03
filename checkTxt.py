@@ -3,11 +3,11 @@ import os
 import json
 import generateHtml
 
-with open('try.json', 'r', encoding="utf-8") as fJson:
+with open('content.json', 'r', encoding="utf-8") as fJson:
     load_dict = json.load(fJson)
 
 documents = load_dict['documents']['items']
-folder_path = './documents/txt/'
+folder_path = './public/documents/txt/'
 
 documentLocal = []
 for file in os.listdir(folder_path):
@@ -30,7 +30,7 @@ for document in documentLocal:
 
 # --- sort json --- #
 
-with open('try.json', 'r', encoding="utf-8") as fJson:
+with open('content.json', 'r', encoding="utf-8") as fJson:
     load_dict = json.load(fJson)
 
     documents = load_dict['documents']['items']
@@ -41,5 +41,5 @@ with open('try.json', 'r', encoding="utf-8") as fJson:
                 documents[i] = documents[j]
                 documents[j] = temp
 
-with open('try.json', 'w', encoding="utf-8") as fJson:
+with open('content.json', 'w', encoding="utf-8") as fJson:
     json.dump(load_dict, fJson, ensure_ascii=False, indent=4)

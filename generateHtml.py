@@ -8,12 +8,12 @@ def main(inputFile):
     # --------generate html from txt----------------#
     # html init
     newHtml = dominate.document()
-    newHtml.add(link(rel="stylesheet", href="./styles.css"))
+    newHtml.add(link(rel="stylesheet", href="./styles2.css"))
     newHtml.add(meta(charset="utf-8"))
     title = newHtml.add(div(id="title", className="container"))
     content = newHtml.add(div(id="content", className="container"))
 
-    path = os.path.join('./documents/txt/', inputFile)
+    path = os.path.join('./public/documents/txt/', inputFile)
     print(path)
     # read txt
     f = open(path, encoding="utf-8")
@@ -49,7 +49,7 @@ def main(inputFile):
     f.close()
 
     # document name
-    path = './documents/' + no + '.html'
+    path = './public/documents/' + no + '.html'
 
     with open(path, 'w', encoding="utf-8") as f:
         f.write(newHtml.render())
@@ -58,7 +58,7 @@ def main(inputFile):
 
     # edit json
 
-    with open('try.json', 'r', encoding="utf-8") as fJson:
+    with open('content.json', 'r', encoding="utf-8") as fJson:
         load_dict = json.load(fJson)
 
         documents = load_dict['documents']['items']
@@ -67,6 +67,6 @@ def main(inputFile):
         newDocument['author'] = auther
         newDocument['no'] = no
         documents.append(newDocument)
-    with open('try.json', 'w', encoding="utf-8") as fJson:
+    with open('content.json', 'w', encoding="utf-8") as fJson:
         json.dump(load_dict, fJson, ensure_ascii=False, indent=4)
 
