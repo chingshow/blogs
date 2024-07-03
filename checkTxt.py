@@ -19,16 +19,13 @@ def main():
 
     exist = 0
     for document in documentLocal:
-        #print(document)
         exist = 0
         for item in documents:
             if item['no'] + ".txt" == document:
                 exist = 1
                 break
-        if exist == 0:
-            print(document)
-            # 發現不存在這個文章 --> 開始產生html
-            generateHtml.main(document)
+        # 發現不存在這個文章 --> 開始產生html
+        generateHtml.main(document, exist)
 
     # --- sort json --- #
 

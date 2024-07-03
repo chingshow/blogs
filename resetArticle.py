@@ -21,3 +21,4 @@ for t in all_text:
 all_text = glob.glob('public/documents/txt/*.txt')
 for t in all_text:
     os.remove(t)
+

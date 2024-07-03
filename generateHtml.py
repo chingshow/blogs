@@ -4,7 +4,7 @@ from dominate.tags import *
 import dominate
 import json
 
-def main(inputFile):
+def main(inputFile, exist):
     # --------generate html from txt----------------#
     # html init
     newHtml = dominate.document()
@@ -14,7 +14,7 @@ def main(inputFile):
     content = newHtml.add(div(id="content", className="container"))
 
     path = os.path.join('./public/documents/txt/', inputFile)
-    print(path)
+    # print(path)
     # read txt
     f = open(path, encoding="utf-8")
     length = 0
@@ -56,18 +56,18 @@ def main(inputFile):
         f.write(newHtml.render())
 
     # --------finish generate html from txt----------------#
+    if exist == 0:
+        # edit json
 
-    # edit json
+        with open('content.json', 'r', encoding="utf-8") as fJson:
+            load_dict = json.load(fJson)
 
-    with open('content.json', 'r', encoding="utf-8") as fJson:
-        load_dict = json.load(fJson)
-
-        documents = load_dict['documents']['items']
-        newDocument = {}
-        newDocument['titles'] = title_name
-        newDocument['author'] = auther
-        newDocument['no'] = no
-        documents.append(newDocument)
-    with open('content.json', 'w', encoding="utf-8") as fJson:
-        json.dump(load_dict, fJson, ensure_ascii=False, indent=4)
+            documents = load_dict['documents']['items']
+            newDocument = {}
+            newDocument['titles'] = title_name
+            newDocument['author'] = auther
+            newDocument['no'] = no
+            documents.append(newDocument)
+        with open('content.json', 'w', encoding="utf-8") as fJson:
+            json.dump(load_dict, fJson, ensure_ascii=False, indent=4)
 
