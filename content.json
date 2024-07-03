@@ -32,37 +32,37 @@
     "list": [
       {
         "name": "Your Name",
-        "photo": "../images/javascript.jpg",
+        "photo": "./images/javascript.jpg",
         "title": "Where you are from, what you can do",
         "description": "Introduce yourself. Introduce yourself. Introduce yourself."
       },
       {
         "name": "Your Name",
-        "photo": "../images/html.jpg",
+        "photo": "./images/html.jpg",
         "title": "Where you are from, what you can do",
         "description": "Introduce yourself. Introduce yourself. Introduce yourself."
       },
       {
         "name": "Your Name",
-        "photo": "../images/css.jpg",
+        "photo": "./images/css.jpg",
         "title": "Where you are from, what you can do Where you are from, what you can doWhere you are from, what you can do",
         "description": "Introduce yourself. Introduce yourself. Introduce yourself."
       },
       {
         "name": "Your Name",
-        "photo": "../images/css.jpg",
+        "photo": "./images/css.jpg",
         "title": "Where you are from, what you can do",
         "description": "Introduce yourself. Introduce yourself. Introduce yourself.Introduce yourself. Introduce yourself. Introduce yourself.Introduce yourself. Introduce yourself. Introduce yourself.Introduce yourself. Introduce yourself. Introduce yourself.Introduce yourself. Introduce yourself. Introduce yourself."
       },
       {
         "name": "Your Name",
-        "photo": "../images/css.jpg",
+        "photo": "./images/css.jpg",
         "title": "Where you are from, what you can do",
         "description": "Introduce yourself. Introduce yourself. Introduce yourself."
       },
       {
         "name": "Your Name",
-        "photo": "../images/css.jpg",
+        "photo": "./images/css.jpg",
         "title": "Where you are from, what you can do",
         "description": "Introduce yourself. Introduce yourself. Introduce yourself."
       }
@@ -101,15 +101,15 @@
   "footer": {
     "organizer": {
       "title": "Organizer",
-      "image": "../images/organizer.png"
+      "image": "./images/organizer.png"
     },
     "coOrganizer": {
       "title": "Co-organizer",
-      "image": "../images/co-org.png"
+      "image": "./images/co-org.png"
     },
     "sponsor": {
       "title": "Sponsor",
-      "image": "../images/sponsor.png"
+      "image": "./images/sponsor.png"
     },
     "contact": {
       "title": "Contact Us",
