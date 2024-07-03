@@ -25,7 +25,7 @@
   "hero": {
     "title": "Activity Title",
     "date": "1095",
-    "backgroundImage": "../images/imageKV.png"
+    "backgroundImage": "./images/imageKV.png"
   },
   "speakers": {
     "title": "Speakers",
