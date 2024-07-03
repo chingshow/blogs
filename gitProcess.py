@@ -5,9 +5,12 @@ from git import Repo
 
 def setup_git_config(repo):
     """設置 Git 配置"""
+    git_username = os.getenv('GIT_USERNAME')
+    git_email = os.getenv('GIT_EMAIL')
+
     with repo.config_writer() as git_config:
-        git_config.set_value('user', 'name', 'Hinarin2017')
-        git_config.set_value('user', 'email', 'b812110011@tmu.edu.com')
+        git_config.set_value('user', 'name', git_username)
+        git_config.set_value('user', 'email', git_email)
 
 
 def auto_git_process(repo_path, commit_message):
