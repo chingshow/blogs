@@ -36,6 +36,7 @@ def main(inputFile):
                         title_name.append(char)
                 title_name = ''.join(str(x) for x in title_name)
                 title.add(h1(title_name, id="title_name"))
+                newHtml.title = title_name
             elif length == 3:
                 auther = []
                 for char in line:
