@@ -33,9 +33,9 @@ def main():
         load_dict = json.load(fJson)
 
         documents = load_dict['documents']['items']
-        for i in range(0, len(documents)):
-            for j in range(i+1, len(documents)):
-                if documents[i]['no'] > documents[j]['no']:
+        for i in range(len(documents)-1, -1, -1):
+            for j in range(i-1, -1, -1):
+                if documents[i]['no'] < documents[j]['no']:
                     temp = documents[i]
                     documents[i] = documents[j]
                     documents[j] = temp
