@@ -7,7 +7,7 @@ def setup_git_config(repo):
     """設置 Git 配置"""
     with repo.config_writer() as git_config:
         git_config.set_value('user', 'name', 'Hinarin2017')
-        git_config.set_value('user', 'email', 'b812110011@example.com')
+        git_config.set_value('user', 'email', 'b812110011@tmu.edu.com')
 
 
 def auto_git_process(repo_path, commit_message):
