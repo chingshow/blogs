@@ -8,6 +8,7 @@ def setup_git_config(repo):
     git_username = os.getenv('GIT_USERNAME')
     git_email = os.getenv('GIT_EMAIL')
 
+
     if not git_username or not git_email:
         raise ValueError("GIT_USERNAME or GIT_EMAIL not set in .env file")
 
