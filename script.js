@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set hero content
         document.querySelector('#hero h1').textContent = content.hero.title;
         document.querySelector('#hero .date').textContent = content.hero.date;
-        document.querySelector('#hero').style.backgroundImage = `url(${content.hero.backgroundImage})`;
+        document.querySelector('#hero').style.backgroundImage = `url(${content.hero.backgroundImages})`;
 
         // Populate speakers
         const speakerGrid = document.querySelector('.speaker-grid');
