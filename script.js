@@ -45,12 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Populate Documents
-        const documentsContent = document.querySelector('.documents-content');
+        /*const documentsContent = document.querySelector('.documents-content');
         content.documents.items.forEach(item => {
             const documentItem = document.createElement('div');
             documentItem.className = 'documents-item';
             documentItem.innerHTML = `
                 <a href="./public/documents/${item.no}.html" target="_blank">${item.titles}</a> <p class="author">- ${item.author}</p>
+            `;
+            documentsContent.appendChild(documentItem);
+        });*/
+
+        // Populate Documents
+        const documentsContent = document.querySelector('.documents-content');
+        content.documents.items.forEach(item => {
+            const documentItem = document.createElement('a');
+            documentItem.href = `./public/documents/${item.no}.html`;
+            documentItem.target = "_blank";
+            documentItem.innerHTML = `
+                <div class="documents-item"><h3>${item.titles}</h3><p class="author">- ${item.author}</p></div> 
             `;
             documentsContent.appendChild(documentItem);
         });
