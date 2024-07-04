@@ -46,7 +46,7 @@ def main(inputFile, exist):
                 title.add(h2(auther, id="auther"))
             else:
                 if(line[0] == '*'):
-                    content.add(h1(line))
+                    content.add(h3(line[1:]))
                 else:
                     content.add(p(line))
             length += 1
