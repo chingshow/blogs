@@ -72,6 +72,11 @@
         "title": "Documents",
         "items": [
             {
+                "titles": "For Example",
+                "author": "not GPT",
+                "no": "00022"
+            },
+            {
                 "titles": "機器人的幽默 —— GPT笑話合輯最終回",
                 "author": "ChatGPT-4o —— 創世紀笑話大神",
                 "no": "00021"

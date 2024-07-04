@@ -11,8 +11,10 @@ def main():
     load_dotenv()
     api_key = os.getenv('RAGIC_API')
     base_url = 'https://ap12.ragic.com/chingshow'
+    tag = "blogs"
+    sheet_id = "2"
 
-    ENDPOINT = f'{base_url}/blogs/2'
+    ENDPOINT = f'{base_url}/{tag}/{sheet_id}'
     response = requests.get(ENDPOINT, params=params, headers={'Authorization': 'Basic '+api_key})
 
     response_dict = response.json()
