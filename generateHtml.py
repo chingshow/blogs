@@ -45,7 +45,10 @@ def main(inputFile, exist):
                 auther = ''.join(str(x) for x in auther)
                 title.add(h2(auther, id="auther"))
             else:
-                content.add(p(line))
+                if(line[0] == '*'):
+                    content.add(h1(line))
+                else:
+                    content.add(p(line))
             length += 1
     f.close()
 
