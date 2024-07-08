@@ -3,3 +3,6 @@
 .env
 
 *.exe
+
+__pycache__/
+*.pyc
