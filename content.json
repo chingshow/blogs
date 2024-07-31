@@ -4,10 +4,6 @@
         {
             "label": "Documents",
             "link": "#documents"
-        },
-        {
-            "label": "Speakers",
-            "link": "#speakers"
         }
     ],
     "languages": [
@@ -71,6 +67,11 @@
     "documents": {
         "title": "Documents",
         "items": [
+            {
+                "titles": "believe in yourself",
+                "author": "you",
+                "no": "00028"
+            },
             {
                 "titles": "hhhh",
                 "author": "hhhh",

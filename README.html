@@ -1,0 +1,47 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!-- 此处省略掉markdown的css样式，因为太长了 -->
+</style>
+<h1>ReadItAgain</h1>
+<h2>Installation and Setup</h2>
+<h3>For Docker Deployment</h3>
+<ol>
+<li>
+<p><strong>Building the Environment:</strong>
+   To set up your Docker environment, run the following command:</p>
+</li>
+<li>
+<p><strong>Stopping and Removing Containers:</strong>
+To stop and remove the Docker containers, execute:</p>
+</li>
+<li>
+<p><strong>Executing Commands in a Running Container:</strong>
+For example, to run SQL commands in the database:</p>
+</li>
+</ol>
+<p><em>Note: Ensure that in <code>backend/app/config.py</code>, the line <code>os.environ['DATABASE_URL'] = ...</code> remains commented when deploying with Docker.</em></p>
+<h3>For Local Development</h3>
+<ol>
+<li>
+<p><strong>Setting Up the Local Environment:</strong>
+To set up your project for local development, follow these steps:</p>
+</li>
+<li>
+<p>Ensure you have all the necessary local dependencies installed.</p>
+</li>
+<li>
+<p>Configure your local environment settings.</p>
+</li>
+<li>
+<p><strong>Database Configuration:</strong>
+For local development, uncomment the following line in <code>backend/app/config.py</code>: </p>
+</li>
+</ol>
+<p>This will configure the application to use your local database settings.</p>
+<ol>
+<li><strong>Starting the Local Server:</strong>
+Navigate to the backend directory and start the local development server with the following command: </li>
+</ol>
+<p>If you need hot reloading, add <code>--reload</code> to the command:</p>
+<p><em>Note: Remember to revert the <code>os.environ['DATABASE_URL'] = ...</code> line back to its original commented state when switching back to Docker deployment.</em></p>

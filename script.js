@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#hero').style.backgroundImage = `url(${content.hero.backgroundImages})`;
 
         // Populate speakers
-        const speakerGrid = document.querySelector('.speaker-grid');
+        /*const speakerGrid = document.querySelector('.speaker-grid');
         content.speakers.list.forEach(speaker => {
             const speakerCard = document.createElement('div');
             speakerCard.className = 'speaker-card';
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             speakerGrid.appendChild(speakerCard);
-        });
+        });*/
 
         // Populate Documents
         /*const documentsContent = document.querySelector('.documents-content');
@@ -68,12 +68,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Set footer content
-        document.querySelector('.organizers h3').textContent = content.footer.organizer.title;
+        /*document.querySelector('.organizers h3').textContent = content.footer.organizer.title;
         document.querySelector('.organizers img').src = content.footer.organizer.image;
         document.querySelector('.co-organizers h3').textContent = content.footer.coOrganizer.title;
         document.querySelector('.co-organizers img').src = content.footer.coOrganizer.image;
         document.querySelector('.sponsors h3').textContent = content.footer.sponsor.title;
-        document.querySelector('.sponsors img').src = content.footer.sponsor.image;
+        document.querySelector('.sponsors img').src = content.footer.sponsor.image;*/
         document.querySelector('.contact h3').textContent = content.footer.contact.title;
         document.querySelector('.contact p:nth-child(2)').textContent = `Phone: ${content.footer.contact.phone}`;
         document.querySelector('.contact p:nth-child(3)').textContent = `Address: ${content.footer.contact.address}`;
